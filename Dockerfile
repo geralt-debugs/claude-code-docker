@@ -14,8 +14,9 @@ RUN curl -fsSL https://claude.ai/install.sh | bash
 
 COPY .bashrc /root/.bashrc
 
+ENV PATH="/root/.local/bin:$PATH"
 # Set default workdir (optional)
 WORKDIR /workspace
 
 # Ensure entrypoint is the Claude Code CLI
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["claude"]
